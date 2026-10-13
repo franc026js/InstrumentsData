@@ -1,0 +1,29 @@
+{
+  "name": "instrumentsdata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild public/app.js --bundle --format=esm --outfile=public/app.bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franc026js/InstrumentsData.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franc026js/InstrumentsData/issues"
+  },
+  "homepage": "https://github.com/franc026js/InstrumentsData#readme",
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "vercel": "^63.1.0"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
+    "@vercel/blob": "^2.8.1"
+  }
+}

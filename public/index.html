@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#f3f6f4">
+		<meta name="description" content="Registro de instrumentos aeronáuticos para un proyecto escolar de aviónica.">
+		<title>INSTRUMENTS DATA | Registro de instrumentos</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="app.bundle.js" type="module"></script>
+	</head>
+	<body>
+		<header class="site-header">
+			<a class="brand" href="/" aria-label="INSTRUMENTS DATA, inicio">
+				<span class="brand-mark" aria-hidden="true">ID</span>
+				<span class="brand-name">INSTRUMENTS <span>DATA</span></span>
+			</a>
+			<span class="header-tag">AVIÓNICA · REGISTRO TÉCNICO</span>
+		</header>
+
+		<main class="page-shell">
+			<section class="intro" aria-labelledby="page-title">
+				<div>
+					<p class="eyebrow">INVENTARIO AERONÁUTICO</p>
+					<h1 id="page-title">Registro de instrumentos</h1>
+					<p class="intro-copy">Identificá cada instrumento y prepará su ficha técnica.</p>
+				</div>
+				<div class="status-chip"><span aria-hidden="true"></span> Módulo de registro</div>
+			</section>
+
+			<section class="form-section" aria-labelledby="form-title">
+				<div class="section-heading">
+					<div class="section-index" aria-hidden="true">01</div>
+					<div>
+						<h2 id="form-title">Datos del instrumento</h2>
+						<p>Completá los datos de identificación</p>
+					</div>
+				</div>
+
+				<form id="instrument-form">
+					<div class="form-grid">
+						<div class="field field-wide">
+							<label for="user-name">Persona que carga el instrumento</label>
+							<input id="user-name" name="userName" type="text" autocomplete="name" placeholder="Nombre y apellido" required>
+						</div>
+						<div class="field field-wide">
+							<label for="instrument-name">Nombre del instrumento</label>
+							<input id="instrument-name" name="instrumentName" type="text" placeholder="Ej. Altímetro barométrico" required>
+						</div>
+						<div class="field">
+							<label for="part-number">Número de parte</label>
+							<input id="part-number" name="partNumber" type="text" placeholder="Ej. 5934-01" required>
+						</div>
+						<div class="field">
+							<label for="serial-number">Número de serie</label>
+							<input id="serial-number" name="serialNumber" type="text" placeholder="Ej. SN-2048" required>
+						</div>
+						<div class="field field-wide">
+							<label for="instrument-photo">Foto del instrumento</label>
+							<input id="instrument-photo" class="file-input" name="instrumentPhoto" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="photo-help">
+							<span id="photo-help" class="field-hint">Opcional. Podés cambiarla o quitarla al editar.</span>
+						</div>
+					</div>
+					<div class="form-actions">
+						<p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+						<div class="form-buttons">
+							<button id="cancel-edit" class="cancel-button" type="button" hidden>Cancelar edición</button>
+							<button id="submit-button" class="submit-button" type="submit">Agregar instrumento <span aria-hidden="true">→</span></button>
+						</div>
+					</div>
+				</form>
+
+				<figure id="photo-preview" class="photo-preview" hidden>
+					<img id="preview-image" alt="Vista previa del instrumento seleccionado">
+					<figcaption id="preview-caption"></figcaption>
+					<button id="remove-photo" class="remove-photo-button" type="button">Quitar foto</button>
+				</figure>
+			</section>
+
+			<section class="records-section" aria-labelledby="records-title">
+				<div class="records-heading">
+					<div class="section-heading">
+						<div class="section-index" aria-hidden="true">02</div>
+						<div>
+							<h2 id="records-title">Instrumentos registrados</h2>
+							<p>Los instrumentos aparecerán en esta lista.</p>
+						</div>
+					</div>
+					<span id="record-count" class="record-count">0 instrumentos</span>
+				</div>
+				<div class="table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">Instrumento</th>
+								<th scope="col">N.º de parte</th>
+								<th scope="col">N.º de serie</th>
+								<th scope="col">Cargado por</th>
+								<th scope="col">Foto</th>
+								<th scope="col">Acciones</th>
+							</tr>
+						</thead>
+							<tbody id="records-body">
+								<tr>
+									<td class="empty-state" colspan="6">Todavía no hay instrumentos registrados.</td>
+								</tr>
+							</tbody>
+					</table>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">INSTRUMENTS DATA <span>·</span> PROYECTO ESCOLAR DE AVIÓNICA</footer>
+	</body>
+</html>
